@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Simple mocha example</title>
+
+    <!-- mocha presentation layer -->
+    <link rel="stylesheet" href="mocha/mocha.css"/>
+</head>
+<body>
+    <div id="mocha"></div>
+
+    <!-- scripts to test -->
+    <script src="phone.js"></script>
+
+    <!-- needed script to launch tests -->
+    <script src="mocha/mocha.js"></script>
+    <script src="expect.js/expect.js"></script>
+    <script src="mocha-global-reporter.js"></script>
+
+    <!-- mocha setup -->
+    <script>
+    mocha.setup({
+        ui: 'bdd',
+        reporter: Mocha.reporters.GlobalReporter
+    });
+    </script>
+
+    <!-- your tests -->
+    <script src="phone-test.js"></script>
+
+    <!-- run them all -->
+    <script>
+        mocha.run();
+    </script>
+</body>
+</html>
